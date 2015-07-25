@@ -16,89 +16,52 @@ WHAT DIDN'T WORK:
 #	list fibo will be the sequence
 fibo = []
 
+
 a = raw_input("what is your starting number?  ")
 z = raw_input("and your ending number?  ")
 a = int(a)
-z = int(z) + 1
+z = int(z)
 
-#	x and y are the initial #s in the sequence
-x = a
-y = x + (x - 1)
-fibo.append(x)
-fibo.append(y)
+#	> > > > > > 		SECTION 1	vars from user #s
+print "\n	> > > > > 	SECTION 1"
 
-
-
-print """	> > > > > 	SECTION 1	this section works, returning:
-	print range, 
-	then 1st #, 
-	then 2nd #, 
-	then fibo, 
-	then len(fibo)"
-"""
-
-print range(a, z)
-print x
-print y
-print fibo
-print len(fibo)
+#	The Setup: x and y are the initial #s in the sequence
+print fibo	#empty list
+x = a			# if 3
+y = x + (x - 1)	# 	w/b 5
+fibo.append(x)	# fibo = [3]
+fibo.append(y)	# fibo = [3, 5]
 
 
-print "\n	> > > > > 	SECTION 2"
-print "print fibo; append fibo w/5 numbers, print again"
-print fibo
-"""
-fibo.append(23)
-fibo.append(24)
-fibo.append(25)
-fibo.append(27)
-fibo.append(28)
-print ""
-print ""
-print fibo
-"""
+#	New Vars: return last and 2nd-to-last nums in list "fibo"
+last_num = (fibo[len(fibo)-1])		# return [5]
+penult_num = (fibo[len(fibo)-2])	# return [3]
 
-print "\n	> > > > > 	SECTION 3		this section works returning last and penult #s in list"
-print "Print length of fibo"
-print len(fibo)
+print len(fibo)			# return 2
+y = penult_num + last_num	#new version of y, using previous fibonacci seq result
 
+
+#	> > > > > > 		SECTION 2		the actual math
+print "\n	> > > > > 	SECTION 2		the actual math"
+
+#		initial nums from user's low num
 print fibo
 
-print "\nPrint (fibo[len(fibo)])"
-print (fibo[len(fibo)-1])
+# 		while high num in fibo list is less than user's high num (z)
+while (fibo[len(fibo)-1]) + (fibo[len(fibo)-2]) <= z:
+	fibo.append((fibo[len(fibo)-2]) + (fibo[len(fibo)-1]))
+	print fibo				# just checking - not necessary after every go 'round
+print (fibo[len(fibo)-1])	# just checking - not necessary	
+print z						# just checking - not necessary
+print fibo		# the answer
 
-print "\nPrint (fibo[len(fibo)-2])"
-print (fibo[len(fibo)-2])
-
-print "\nNow save those to vars"
-last_num = (fibo[len(fibo)-1])
-penult_num = (fibo[len(fibo)-2])
-
-print "\nPrint (fibo[len(fibo)])"
-print last_num
-
-print "\nPrint (fibo[len(fibo)-2])"
-print penult_num
-print "  	> > > > > 	SECTION 3 - END"
-
-
-print "\n	> > > > > 	SECTION 4		the actual math"
-
-"""		returns endless loop
-fibo = []
-while y <= z:
-	print fibo
-	y = penult_num + last_num
-	fibo.append(y)
-print fibo
-"""
-
-
+print "is z greater than last #?"
+print z > (fibo[len(fibo)-1])
+print type (fibo[len(fibo)-1])
 
 
 print "\nFibonacci!"
-
-print "Not just fibonacci, but Fibonacci_NEW!"
+print "Not just Fibonacci, but Fibonacci_NEW!"
 		
 
 
