@@ -1,5 +1,5 @@
 
-#	empty list "fibo" will contain final sequence at end
+#	empty list "fibo" will contain final sequence at end of file being run
 fibo = []
 
 #	> > > > > > 		SECTION 1	appends fibo (list) w/first pair of vars from user
